@@ -1,0 +1,13 @@
+<h1>Home</h1>
+
+
+
+
+<% if !session[:user_id] %>
+    <%= form_tag("/signin", method: "get") do %>
+       <!-- text_field_tag(name, value = nil, options = {}) -->
+       <p><%= text_field_tag :username, value = "akorkor" %><%= label_tag(:username, "username") %></p>
+       <p><%= text_field_tag :password, value = "ak30" %><%= label_tag(:password, "password") %></p>
+       <%= submit_tag "Login" %>
+    <% end %>
+<% end %>

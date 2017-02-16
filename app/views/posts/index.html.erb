@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to 'New Post', new_user_post_path(user_id:session[:user_id]) %>
+
+<% @posts.each do |post| %>
+    <div id="bigBx">
+      <div id="userPostName">
+        <%= link_to post.title, user_post_path(user_id:session[:user_id], id: post.id) %>
+       </div>
+      <div id="postInfo">
+        <%= post.content %>
+      </div>
+      <div id="postFunc">
+        <%= link_to 'Edit', edit_user_post_path(user_id:session[:user_id], id: post.id)  %>
+        <%= link_to 'Destroy', user_post_path(user_id:session[:user_id], id: post.id),
+         method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+    </div>
+
+<% end %>
+
+<br>

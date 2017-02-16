@@ -1,0 +1,8 @@
+<h1>Menu</h1>
+
+
+
+<% if session[:user_id] %>
+  <%= link_to 'All Users', users_path %>
+  <%= link_to ' Signout','/signout' %>
+<% end %>
